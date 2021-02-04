@@ -5,7 +5,7 @@
 let matrix = [];
 
 function setup() {
-  createCanvas(700, 700, P2D);
+  createCanvas(650, 650, P2D);
   stroke(0, 255, 0);
   textSize(20);
   fillMatrix();
@@ -34,7 +34,7 @@ class Stream {
     for (let i = 0; i < this.stream.length; i++) {
       if (round(random(50)) === 1) this.stream[i] = String.fromCharCode(0x30A0 + round(random(97)))
       if (round(random(100)) === 1) this.speed = random(0.5, 3);
-      if (this.y > 700 + 200) this.y = -10;
+      if (this.y > 650 + 200) this.y = -10;
       i === 0 ? fill(200, 255, 200) : fill(0, 255, 0, 255 - floor(255 / this.stream.length) * i);
       i === 0 ? stroke(50, 255, 50) : stroke(0, 255, 0, 255 - floor(255 / this.stream.length) * i);
       text(this.stream[i], this.x, this.y + i * -20);
@@ -43,7 +43,7 @@ class Stream {
 }
 
 function fillMatrix() {
-  for (let i = 0; i * 20 < 700; i++) {
+  for (let i = 0; i * 20 < 650; i++) {
     matrix.push(new Stream(i * 20, floor(random(-300, 800)), floor(random(5, 10)), floor(random(0.5, 5))));
     matrix.push(new Stream(i * 20, floor(random(-300, 800)), floor(random(5, 15)), floor(random(0.5, 5))));
   }
